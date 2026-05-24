@@ -1,0 +1,336 @@
+/* ============================================================
+   Sangheon Lee Portfolio System
+   colors_and_type.css — foundational tokens
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-3Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-4Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-5Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-6SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-7Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("./fonts/Paperlogy-8ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Color: Neutral foundation ----------
+     Off-white / warm paper base, charcoal foreground.
+     Slightly warm undertone (not pure gray) for editorial feel. */
+  --paper:        #F6F4EF;   /* page bg, light surface */
+  --paper-soft:   #EFECE5;   /* card, hover, subtle divider fill */
+  --paper-mute:   #E6E2D9;   /* deeper muted surface */
+
+  --ink:          #14130F;   /* primary fg — near-black, warm */
+  --ink-2:        #2A2823;   /* strong body */
+  --ink-3:        #595650;   /* secondary fg, captions */
+  --ink-4:        #8A867D;   /* tertiary, meta, timestamps */
+  --ink-5:        #BCB7AB;   /* disabled, faint rule */
+
+  --rule:         #D9D4C8;   /* hairline borders */
+  --rule-strong:  #B6B0A2;   /* primary divider */
+
+  /* ---------- Color: Inverse (dark surfaces) ---------- */
+  --ink-bg:       #14130F;   /* dark surface */
+  --ink-bg-2:     #1E1C18;   /* dark card */
+  --ink-fg:       #F6F4EF;   /* fg on dark */
+  --ink-fg-2:     #BCB7AB;   /* secondary on dark */
+
+  /* ---------- Color: Accent ----------
+     A single, restrained accent. Deep oxidized-orange / terracotta —
+     editorial, modern, calm. Used for links, the accent rule under
+     section headers, the active-state dot, small numerals. */
+  --accent:       #B5491F;   /* primary accent */
+  --accent-soft:  #D7B6A5;   /* tinted background, very sparingly */
+  --accent-ink:   #FFFFFF;   /* fg on accent */
+
+  /* ---------- Semantic foreground / background ---------- */
+  --bg:           var(--paper);
+  --bg-soft:      var(--paper-soft);
+  --fg:           var(--ink);
+  --fg-2:         var(--ink-3);
+  --fg-3:         var(--ink-4);
+  --link:         var(--accent);
+  --link-hover:   var(--ink);
+
+  /* ---------- Typography: families ---------- */
+  --font-sans: "Paperlogy", "Inter", "Pretendard", -apple-system,
+               BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo",
+               "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace,
+               Menlo, Consolas, monospace;
+  --font-num:  var(--font-sans); /* tabular numerals via feature setting */
+
+  /* ---------- Typography: scale (editorial, generous) ----------
+     Built around a 1.20 minor-third-ish scale. No hero-poster sizes;
+     premium portfolios reward restraint over drama. */
+  --fs-display:  64px;   /* hero name / opening statement */
+  --fs-h1:       44px;   /* section opener */
+  --fs-h2:       32px;   /* project title */
+  --fs-h3:       22px;   /* sub-section, supporting project */
+  --fs-h4:       17px;   /* eyebrow, label */
+  --fs-lead:     20px;   /* lead paragraph */
+  --fs-body:     16px;   /* body */
+  --fs-small:    14px;   /* meta */
+  --fs-micro:    12px;   /* eyebrow, tag, role line */
+
+  /* ---------- Typography: weights ---------- */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semi:     600;
+  --fw-bold:     700;
+
+  /* ---------- Typography: line height & tracking ---------- */
+  --lh-tight:    1.08;   /* display */
+  --lh-snug:     1.20;   /* headings */
+  --lh-normal:   1.55;   /* body */
+  --lh-relaxed:  1.70;   /* long-form */
+
+  --tr-tight:    -0.02em;  /* display */
+  --tr-snug:     -0.01em;  /* headings */
+  --tr-normal:    0;
+  --tr-eyebrow:   0.14em;  /* uppercase eyebrows */
+  --tr-meta:      0.04em;
+
+  /* ---------- Spacing (4px base, editorial generous) ---------- */
+  --sp-0:   0;
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:   12px;
+  --sp-4:   16px;
+  --sp-5:   24px;
+  --sp-6:   32px;
+  --sp-7:   48px;
+  --sp-8:   64px;
+  --sp-9:   96px;
+  --sp-10:  128px;
+  --sp-11:  160px;
+
+  /* ---------- Layout ---------- */
+  --measure-narrow:  560px;  /* long-form prose ideal */
+  --measure-base:    680px;  /* standard column */
+  --measure-wide:    920px;
+  --container:      1080px;  /* page max */
+  --container-wide: 1240px;
+
+  /* ---------- Radii (very restrained — editorial = sharp) ---------- */
+  --r-0:  0;
+  --r-1:  2px;   /* default */
+  --r-2:  4px;
+  --r-3:  8px;   /* large surfaces only */
+  --r-pill: 999px;
+
+  /* ---------- Shadow (almost none — flat, paper-like) ---------- */
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 rgba(20, 19, 15, 0.04);
+  --shadow-2: 0 1px 2px rgba(20, 19, 15, 0.04), 0 4px 12px rgba(20, 19, 15, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(181, 73, 31, 0.18);
+
+  /* ---------- Borders ---------- */
+  --bw-hair:   1px;
+  --bw-rule:   1px;
+  --bw-strong: 2px;
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emph:     cubic-bezier(0.3, 0, 0, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   360ms;
+}
+
+/* ============================================================
+   Base elements — semantic typography
+   ============================================================ */
+html {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "tnum" 0;
+}
+
+body {
+  margin: 0;
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* Display — hero / opening statement */
+.t-display, .display {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg);
+}
+
+h1, .t-h1 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+  color: var(--fg);
+  margin: 0 0 var(--sp-5);
+}
+
+h2, .t-h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+  color: var(--fg);
+  margin: 0 0 var(--sp-4);
+}
+
+h3, .t-h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: 0;
+  color: var(--fg);
+  margin: 0 0 var(--sp-3);
+}
+
+h4, .t-h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-h4);
+  line-height: 1.4;
+  color: var(--fg);
+  margin: 0 0 var(--sp-2);
+}
+
+/* Eyebrow — uppercase tracking, used above section headers + project meta */
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-micro);
+  line-height: 1.2;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* Lead paragraph — used at top of sections */
+.t-lead {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  letter-spacing: 0;
+  color: var(--ink-2);
+}
+
+p, .t-body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--ink-2);
+  margin: 0 0 var(--sp-4);
+  text-wrap: pretty;
+}
+
+.t-small, small {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.t-meta {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+  letter-spacing: var(--tr-meta);
+  color: var(--fg-3);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Numerals — used for project numbering "01" "02" "03" */
+.t-num {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: var(--tr-snug);
+  color: var(--fg-3);
+}
+
+code, .t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--paper-soft);
+  padding: 0.12em 0.36em;
+  border-radius: var(--r-1);
+  color: var(--ink-2);
+}
+
+/* Links — accent-on-hover model: ink underline → accent on hover.
+   Inverted in dense link lists where accent default reads better. */
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-standard),
+              text-decoration-color var(--dur-fast) var(--ease-standard);
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+hr, .t-rule {
+  border: 0;
+  border-top: var(--bw-hair) solid var(--rule);
+  margin: var(--sp-7) 0;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
